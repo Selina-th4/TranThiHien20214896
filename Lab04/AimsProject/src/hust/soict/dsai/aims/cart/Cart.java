@@ -3,8 +3,6 @@ package hust.soict.dsai.aims.cart;
 import hust.soict.dsai.aims.media.Media;
 import hust.soict.dsai.aims.media.Playable;
 import hust.soict.dsai.aims.media.CompactDisc;
-import hust.soict.dsai.aims.media.Book;
-import hust.soict.dsai.aims.media.DigitalVideoDisc;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -60,30 +58,13 @@ public class Cart {
                 System.out.print("CD - ");
                 CompactDisc cd = (CompactDisc) media;
                 System.out.printf("[%s] - [%s] - [%s]: [$%.2f]%n", cd.getTitle(), cd.getCategory(), cd.getArtist(), cd.getCost());
-            } else if (media instanceof Book) {
-                System.out.print("Book - ");
-                Book book = (Book) media;
-                System.out.printf("[%s] - [%s] - [%s]: [$%.2f]%n", book.getTitle(), book.getCategory(), book.addAuthor(), book.getCost());
-            } else if (media instanceof DigitalVideoDisc) {
-                System.out.print("DVD - ");
-                DigitalVideoDisc dvd = (DigitalVideoDisc) media;
-                System.out.printf("[%s] - [%s] - [%s]: [$%.2f]%n", dvd.getTitle(), dvd.getCategory(), dvd.getDirector(), dvd.getCost());
             } else {
-                System.out.printf("%s - [%s] - [%s] - [%s]: [$%.2f]%n", media.getType(), media.getTitle(), media.getCategory(), media.getDirector(), media.getCost());
+                System.out.printf("%s - [%s] - [%s] - [%s]: [$%.2f]%n", media.getType(), media.getTitle(),
+                        media.getCategory(), media.getDirector(), media.getCost());
             }
             count++;
         }
         System.out.printf("Total cost: $%.2f%n", totalCost());
-        System.out.println("Options:");
-        System.out.println("--------------------------------");
-        System.out.println("1. Filter medias in cart");
-        System.out.println("2. Sort medias in cart");
-        System.out.println("3. Remove media from cart");
-        System.out.println("4. Play a media");
-        System.out.println("5. Place order");
-        System.out.println("0. Back");
-        System.out.println("--------------------------------");
-        System.out.println("Please choose a number: 0-1-2-3-4-5");
     }
 
 
