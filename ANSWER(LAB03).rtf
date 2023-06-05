@@ -1,0 +1,12 @@
+
+Question: Is JAVA a Pass by Value or a Pass by Reference programming language? JAVA is a pass by value programming language 
+
++Try to add a method addDigitalVideoDisc which allows to pass an arbitrary number of arguments for dvd. Compare to an array parameter. What do you prefer in this case? use addDigitalVideoDisc(DigitalVideoDisc...dvds); 
+
++After the call of swap(jungleDVD, cinderellaDVD) why does the title of these two objects still remain? When we call swap(jungleDVD, cinderellaDVD), the method parameters values of swap are copied to another variable then the copied object is passed, not the original object in main. 
+
++After the call of changeTitle(jungleDVD, cinderellaDVD.getTitle()) why is the title of the JungleDVD changed? because Java creates a copy of references and pass it to method, but they still point to same memory reference, 
+So
+
+if we use method to change value that the copied object pointed to, the object in main change with copied 
+ob'ect 
