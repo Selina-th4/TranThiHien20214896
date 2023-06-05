@@ -93,4 +93,41 @@ public class Cart {
         }
         System.out.printf("Total cost: $%.2f%n", totalCost());
     }
+    public void searchDVD_id(int id){
+        boolean flag = false;
+        DigitalVideoDisc found = null;
+        for (DigitalVideoDisc disc : this.itemsOrdered){
+            if(disc == null){continue;}
+            if (disc.getId()==id){
+                flag = true;
+                found = disc;
+                break;
+            }
+        }
+        if (flag){
+            System.out.println(found.toString());
+        }
+        else{
+            System.out.println("sorry, none of disks have the id you want to search");
+        }
+    }
+    public void searchDVD_title(String title){
+        boolean flag = false;
+        DigitalVideoDisc found = null;
+        for (DigitalVideoDisc disc : this.itemsOrdered){
+            if(disc == null){continue;}
+            if (disc.isMatch(title)){
+                flag = true;
+                found = disc;
+                break;
+            }
+        }
+        if (flag){
+            System.out.println(found.toString());
+        }
+        else{
+            System.out.println("sorry, none of disks have the title you want to search");
+        }
+    }
+
 }
